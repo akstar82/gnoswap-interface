@@ -2,8 +2,8 @@ import React, { useCallback, useMemo, useState } from "react";
 import EarnAddLiquidity from "@components/earn-add/earn-add-liquidity/EarnAddLiquidity";
 import { FEE_RATE_OPTION, PriceRangeType } from "@constants/option.constant";
 import { DUMMY_FEE_TIERS, DUMMY_POOL_TICKS, DUMMY_PRICE_RANGE_MAP } from "./earn-add-liquidity-dummy";
-import { TokenInfo } from "@models/token/token-info";
 import { useTokenAmountInput } from "@hooks/token/use-token-amount-input";
+import { TokenModel } from "@models/token/token-model";
 
 export interface AddLiquidityFeeTier {
   feeRate: string;
@@ -39,23 +39,9 @@ const priceRangeMap = DUMMY_PRICE_RANGE_MAP;
 
 const ticks = DUMMY_POOL_TICKS;
 
-const token0Data = {
-  path: "1",
-  logoURI: "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-  name: "Bitcoin",
-  symbol: "BTC",
-};
-
-const token1Data = {
-  path: "2",
-  logoURI: "https://s2.coinmarketcap.com/static/img/coins/64x64/2.png",
-  name: "Ethereum",
-  symbol: "ETH",
-};
-
 const EarnAddLiquidityContainer: React.FC = () => {
-  const [tokenA, setToken0] = useState<TokenInfo>(token0Data);
-  const [tokenB, setToken1] = useState<TokenInfo>(token1Data);
+  const [tokenA, setToken0] = useState<TokenModel>();
+  const [tokenB, setToken1] = useState<TokenModel>();
   const token0AmountInput = useTokenAmountInput(tokenA);
   const token1AmountInput = useTokenAmountInput(tokenB);
   const [feeRate, setFeeRate] = useState<FEE_RATE_OPTION>();
@@ -84,11 +70,11 @@ const EarnAddLiquidityContainer: React.FC = () => {
     setPriceRange(priceRange);
   }, []);
 
-  const changeToken0 = useCallback((token: TokenInfo) => {
+  const changeToken0 = useCallback((token: TokenModel) => {
     setToken0(token);
   }, []);
 
-  const changeToken1 = useCallback((token: TokenInfo) => {
+  const changeToken1 = useCallback((token: TokenModel) => {
     setToken1(token);
   }, []);
 

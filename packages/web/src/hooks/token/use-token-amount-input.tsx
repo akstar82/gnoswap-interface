@@ -1,9 +1,9 @@
-import { TokenInfo } from "@models/token/token-info";
 import BigNumber from "bignumber.js";
+import { TokenModel } from "@models/token/token-model";
 import { useCallback, useMemo, useState } from "react";
 
 export interface TokenAmountInputModel {
-  token: TokenInfo | undefined;
+  token: TokenModel | undefined;
   amount: string;
   balance: string;
   usdValue: string;
@@ -11,7 +11,7 @@ export interface TokenAmountInputModel {
   changeBalance: (balance: number) => void;
 }
 
-export const useTokenAmountInput = (token: TokenInfo | undefined): TokenAmountInputModel => {
+export const useTokenAmountInput = (token: TokenModel | undefined): TokenAmountInputModel => {
   const [amount, setAmount] = useState<string>("0");
   const [balance, setBalance] = useState<string>("0");
   const [usd, setUSD] = useState<number>();

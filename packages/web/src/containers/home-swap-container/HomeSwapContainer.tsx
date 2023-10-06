@@ -25,11 +25,15 @@ const HomeSwapContainer: React.FC = () => {
     <HomeSwap
       from={{
         token: {
-          path: "USDCoin",
-          name: "USDC",
-          symbol: "USDC",
-          logoURI:
-            "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+          chainId: "test3",
+          address: "0x111111111117dC0aa78b770fA6A738034120C302",
+          path: "gno.land/r/demo/1inch",
+          name: "1inch",
+          symbol: "1INCH",
+          decimals: 6,
+          logoURI: "https://assets.coingecko.com/coins/images/13469/thumb/1inch-token.png?1608803028",
+          priceId: "1inch",
+          createdAt: "1999-01-01T00:00:01Z"
         },
         amount: "121",
         price: "$0.00",
@@ -37,11 +41,15 @@ const HomeSwapContainer: React.FC = () => {
       }}
       to={{
         token: {
-          path: "HEX",
-          name: "HEX",
-          symbol: "HEX",
-          logoURI:
-            "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39/logo.png",
+          chainId: "test3",
+          address: "0x111111111117dC0aa78b770fA6A738034120C302",
+          path: "gno.land/r/demo/1inch",
+          name: "1inch",
+          symbol: "1INCH",
+          decimals: 6,
+          logoURI: "https://assets.coingecko.com/coins/images/13469/thumb/1inch-token.png?1608803028",
+          priceId: "1inch",
+          createdAt: "1999-01-01T00:00:01Z"
         },
         amount: "5000",
         price: "$0.00",

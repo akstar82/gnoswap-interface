@@ -1,40 +1,40 @@
 import React from "react";
 import { EarnAddConfirmAmountInfoWrapper, EarnAddConfirmFeeInfoSection } from "./EarnAddConfirmAmountInfo.styles";
-import { TokenInfo } from "@models/token/token-info";
 import TokenAmount from "@components/common/token-amount/TokenAmount";
 import IconAdd from "@components/common/icons/IconAdd";
+import { TokenModel } from "@models/token/token-model";
 
 export interface EarnAddConfirmAmountInfoProps {
-  tokenA: {
-    info: TokenInfo;
-    amount: string;
-    usdPrice: string;
-  };
-  tokenB: {
-    info: TokenInfo;
-    amount: string;
-    usdPrice: string;
-  };
+  tokenA: TokenModel;
+  tokenAAmount: string;
+  tokenAUSDPrice: string;
+  tokenB: TokenModel;
+  tokenBAmount: string;
+  tokenBUSDPrice: string;
   feeRate: string;
 }
 
 const EarnAddConfirmAmountInfo: React.FC<EarnAddConfirmAmountInfoProps> = ({
   tokenA,
+  tokenAAmount,
+  tokenAUSDPrice,
   tokenB,
+  tokenBAmount,
+  tokenBUSDPrice,
   feeRate,
 }) => {
   return (
     <EarnAddConfirmAmountInfoWrapper>
       <div className="pair-amount">
         <TokenAmount
-          token={tokenA.info}
-          amount={tokenA.amount}
-          usdPrice={tokenA.usdPrice}
+          token={tokenA}
+          amount={tokenAAmount}
+          usdPrice={tokenAUSDPrice}
         />
         <TokenAmount
-          token={tokenB.info}
-          amount={tokenB.amount}
-          usdPrice={tokenB.usdPrice}
+          token={tokenB}
+          amount={tokenBAmount}
+          usdPrice={tokenBUSDPrice}
         />
         <div className="icon-wrapper">
           <IconAdd className="icon-add" />

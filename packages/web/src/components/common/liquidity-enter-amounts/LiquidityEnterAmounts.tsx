@@ -3,13 +3,13 @@ import IconAdd from "../icons/IconAdd";
 import { LiquidityEnterAmountsWrapper } from "./LiquidityEnterAmounts.styles";
 import TokenAmountInput from "../token-amount-input/TokenAmountInput";
 import { TokenAmountInputModel } from "@hooks/token/use-token-amount-input";
-import { TokenInfo } from "@models/token/token-info";
+import { TokenModel } from "@models/token/token-model";
 
 interface LiquidityEnterAmountsProps {
   token0Input: TokenAmountInputModel;
   token1Input: TokenAmountInputModel;
-  changeToken0: (token: TokenInfo) => void;
-  changeToken1: (token: TokenInfo) => void;
+  changeToken0: (token: TokenModel) => void;
+  changeToken1: (token: TokenModel) => void;
 }
 
 const LiquidityEnterAmounts: React.FC<LiquidityEnterAmountsProps> = ({

@@ -6,19 +6,16 @@ import { TokenInfo } from "@models/token/token-info";
 import EarnAddConfirmAmountInfo from "../earn-add-confirm-amount-info/EarnAddConfirmAmountInfo";
 import EarnAddConfirmPriceRangeInfo from "../earn-add-confirm-price-range-info/EarnAddConfirmPriceRangeInfo";
 import EarnAddConfirmFeeInfo from "../earn-add-confirm-fee-info/EarnAddConfirmFeeInfo";
+import { TokenModel } from "@models/token/token-model";
 
 export interface EarnAddConfirmProps {
   amountInfo: {
-    tokenA: {
-      info: TokenInfo;
-      amount: string;
-      usdPrice: string;
-    };
-    tokenB: {
-      info: TokenInfo;
-      amount: string;
-      usdPrice: string;
-    };
+    tokenA: TokenModel;
+    tokenAAmount: string;
+    tokenAUSDPrice: string;
+    tokenB: TokenModel;
+    tokenBAmount: string;
+    tokenBUSDPrice: string;
     feeRate: string;
   };
   priceRangeInfo: {

@@ -1,13 +1,13 @@
 import React from "react";
 import SelectPairButton from "@components/common/select-pair-button/SelectPairButton";
 import { SelectPairWrapper } from "./SelectPair.styles";
-import { TokenInfo } from "@models/token/token-info";
+import { TokenModel } from "@models/token/token-model";
 
 interface SelectPairProps {
-  tokenA: TokenInfo | undefined;
-  tokenB: TokenInfo | undefined;
-  changeToken0: (token: TokenInfo) => void;
-  changeToken1: (token: TokenInfo) => void;
+  tokenB: TokenModel | undefined;
+  tokenA: TokenModel | undefined;
+  changeToken0: (token: TokenModel) => void;
+  changeToken1: (token: TokenModel) => void;
   disabled?: boolean;
 }
 

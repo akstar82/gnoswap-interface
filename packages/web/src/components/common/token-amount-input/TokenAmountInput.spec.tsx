@@ -4,10 +4,15 @@ import GnoswapThemeProvider from "@providers/gnoswap-theme-provider/GnoswapTheme
 import TokenAmountInput, { TokenAmountInputProps } from "./TokenAmountInput";
 
 const token = {
-  path: "1",
-  name: "Gnoland",
-  symbol: "GNO.LAND",
-  logoURI: "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+  chainId: "test3",
+  address: "0x111111111117dC0aa78b770fA6A738034120C302",
+  path: "gno.land/r/demo/1inch",
+  name: "1inch",
+  symbol: "1INCH",
+  decimals: 6,
+  logoURI: "https://assets.coingecko.com/coins/images/13469/thumb/1inch-token.png?1608803028",
+  priceId: "1inch",
+  createdAt: "1999-01-01T00:00:01Z"
 };
 
 describe("TokenAmountInput Component", () => {

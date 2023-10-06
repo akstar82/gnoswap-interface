@@ -6,7 +6,6 @@ import { EarnAddLiquidityWrapper } from "./EarnAddLiquidity.styles";
 import { AddLiquidityType, FEE_RATE_OPTION, PriceRangeType } from "@constants/option.constant";
 import { AddLiquidityFeeTier, AddLiquidityPriceRage, PoolTick, PriceRangeSummary } from "@containers/earn-add-liquidity-container/EarnAddLiquidityContainer";
 import LiquidityEnterAmounts from "@components/common/liquidity-enter-amounts/LiquidityEnterAmounts";
-import { TokenInfo } from "@models/token/token-info";
 import SelectPair from "@components/common/select-pair/SelectPair";
 import { TokenAmountInputModel } from "@hooks/token/use-token-amount-input";
 import DoubleLogo from "@components/common/double-logo/DoubleLogo";
@@ -14,13 +13,14 @@ import IconSettings from "@components/common/icons/IconSettings";
 import Badge, { BADGE_TYPE } from "@components/common/badge/Badge";
 import SelectPriceRangeCustom from "@components/common/select-price-range-custom/SelectPriceRangeCustom";
 import SelectPriceRangeSummary from "@components/common/select-price-range-summary/SelectPriceRangeSummary";
+import { TokenModel } from "@models/token/token-model";
 
 interface EarnAddLiquidityProps {
   mode: AddLiquidityType;
-  tokenA: TokenInfo | undefined;
-  tokenB: TokenInfo | undefined;
-  changeToken0: (token: TokenInfo) => void;
-  changeToken1: (token: TokenInfo) => void;
+  tokenA: TokenModel | undefined;
+  tokenB: TokenModel | undefined;
+  changeToken0: (token: TokenModel) => void;
+  changeToken1: (token: TokenModel) => void;
   token0Input: TokenAmountInputModel;
   token1Input: TokenAmountInputModel;
   feeTiers: AddLiquidityFeeTier[];
